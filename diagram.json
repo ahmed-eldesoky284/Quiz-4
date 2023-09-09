@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Ahmed Eldesoky",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 131.33, "left": -43.33, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -145.6,
+      "left": -25.07,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 59.15, "left": -53.68, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": 44.73,
+      "left": 278.73,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "joystick1:VCC", "uno:5V", "red", [ "v210.98", "h-168.9" ] ],
+    [ "joystick1:VERT", "uno:A0", "green", [ "v188.32", "h-155.16" ] ],
+    [ "joystick1:HORZ", "uno:A1", "green", [ "v180.32", "h-156.77" ] ],
+    [ "joystick1:SEL", "uno:2", "green", [ "v10.32", "h-143.7" ] ],
+    [ "joystick1:GND", "uno:GND.3", "black", [ "v199.65", "h-201.3" ] ],
+    [ "imu1:VCC", "uno:5V", "red", [ "v281.25", "h84.11" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-44.1", "v455.61", "h171.33" ] ],
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h-57.43", "v161.78", "h146.67" ] ],
+    [ "imu1:GND", "uno:GND.1", "black", [ "v-15.42", "h-1.62" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-14.76", "v134.78", "h205.33" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-22.1", "v129.95", "h255.33", "v273.33" ] ],
+    [ "imu1:SCL", "uno:A5.2", "green", [ "v0" ] ],
+    [ "imu1:SDA", "uno:A4.2", "green", [ "v85.91", "h63.58" ] ]
+  ],
+  "dependencies": {}
+}
